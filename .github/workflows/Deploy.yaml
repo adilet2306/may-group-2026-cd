@@ -40,4 +40,5 @@ jobs:
 
     - name: Deploy to GKE
       run: |
+        kubectl get nodes
         helm upgrade --install flask ./flask-app --set deployment.image=${{ inputs.docker_image }} --set deployment.tag=${{ inputs.image_tag }}
