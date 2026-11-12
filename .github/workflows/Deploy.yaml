@@ -39,7 +39,7 @@ jobs:
       uses: 'google-github-actions/get-gke-credentials@v3'
       with:
         cluster_name: 'cluster-1'
-        location: 'us-central1-a'
+        location: 'us-central1'
         project: 'kubernetes-5121007575'
 
     # - name: Get GKE credentials
