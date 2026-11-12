@@ -29,21 +29,12 @@ jobs:
       with:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
 
-    # - name: Set GCP Project
-    #   run: gcloud config set project kubernetes-5121007575
-
-    # - name: Install gke-gcloud-auth-plugin
-    #   run: gcloud components install gke-gcloud-auth-plugin
-
     - name: Get GKE credentials
       uses: 'google-github-actions/get-gke-credentials@v3'
       with:
         cluster_name: 'cluster-1'
         location: 'us-central1'
-        project: 'kubernetes-5121007575'
-
-    # - name: Get GKE credentials
-    #   run: gcloud container clusters get-credentials cluster-1 --region us-central1 --project kubernetes-5121007575
+        project_id: 'kubernetes-5121007575'
 
     - name: Deploy to GKE
       run: |
